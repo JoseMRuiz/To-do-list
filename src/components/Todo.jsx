@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo =({ todo , deleteTodo }) => {
+const Todo =({ todo , deleteTodo , updateTodo}) => {
     const {title,description,state,priority,id} = todo;
     
     return (<li className="list-group-item">{title}
@@ -16,7 +16,12 @@ const Todo =({ todo , deleteTodo }) => {
                     >
                             Eliminar
                     </button>
-                    <button className="btn btn-sm btn-warning">Actualizar</button>
+                    <button 
+                    onClick={() => updateTodo(id)} 
+                    className="btn btn-sm btn-warning"
+                    >
+                        Actualizar
+                    </button>
                 </div>
             </div>
             <span className="badge text-bg-primary">{priority && "prioritario"}</span>
